@@ -13,6 +13,6 @@ module.exports = function ({ email }) {
     // merge email
     return template.merge('ForgetPasswordTemplate', { email });
   }).then((emailBody) => {
-    return smtp.push([email], emailBody);
+    return smtp.send([email], emailBody);
   });
 }
